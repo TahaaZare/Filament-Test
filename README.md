@@ -8,14 +8,14 @@
 <h2 align="center">🔧 Laravel Snippets</h2>
 
 <p align="center">
-  Useful Laravel & Filament customizations, in both English and Persian.
+  Useful Laravel & Filament customizations.
 </p>
 
 ---
 
 ## 🌐 Language | زبان
 
-- [🇬🇧 English](#-english-documentation)
+- [en English](#-english-documentation)
 - [🇮🇷 فارسی](#-مستندات-فارسی)
 
 ---
