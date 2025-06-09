@@ -38,6 +38,10 @@
 - ☎️ **Custom Validation Rule: PhoneNumberByCountry**  
   Validate phone numbers based on selected country (e.g., Iran, USA, Iraq, Saudi Arabia, Russia).
 
+- 📦 **Standard API Response Helper**  
+  A simple utility class (`App\Core\Api\API`) to send consistent success, error, or data-fetched JSON responses.
+
+
 ---
 
 ### 📁 Example Structure
@@ -52,8 +56,12 @@
 │   │   └── Middleware/
 │   │       ├── CheckActiveUser.php
 │   │       └── AccessTimeMiddleware.php
-│   └── Rules/
+│   ├── Core/
+│   │   └── Api/
+│   │       └── API.php
+|   └── Rules/
 │       └── PhoneNumberByCountry.php
+|
 ├── resources/
 │   └── views/
 │       └── filament/
@@ -76,6 +84,8 @@
 - ⏰ **میدلور محدودیت زمانی برای دسترسی**
 - ✅ **میدلور بررسی فعال بودن کاربر**
 - ☎️ **قانون اعتبارسنجی شماره موبایل براساس کشور انتخابی**
+- 📦 **کلاس پاسخ‌دهی استاندارد API**  
+  ابزاری ساده برای ارسال پاسخ‌های موفق، خطا یا دریافت داده‌ها به‌صورت استاندارد و یکپارچه.
 
 ---
 
@@ -91,8 +101,12 @@
 │   │   └── Middleware/
 │   │       ├── CheckActiveUser.php
 │   │       └── AccessTimeMiddleware.php
-│   └── Rules/
+│   ├── Core/
+│   │   └── Api/
+│   │       └── API.php
+|   └── Rules/
 │       └── PhoneNumberByCountry.php
+|
 ├── resources/
 │   └── views/
 │       └── filament/
