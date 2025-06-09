@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://laravel.com" target="_blank">
     <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
@@ -8,14 +7,14 @@
 <h2 align="center">🔧 Laravel Snippets</h2>
 
 <p align="center">
-  Useful Laravel & Filament customizations.
+  A collection of useful and uncommon Laravel customizations & snippets — from Filament tweaks to validation rules and middleware.
 </p>
 
 ---
 
 ## 🌐 Language | زبان
 
-- [en English](#-english-documentation)
+- [🇬🇧 English](#-english-documentation)
 - [🇮🇷 فارسی](#-مستندات-فارسی)
 
 ---
@@ -24,50 +23,45 @@
 
 ### ✨ What's Inside?
 
-- 🔐 **Custom Login in Filament**  
-  Replace the default login view and logic with your own implementation.
+- 🔐 **Custom Filament Login**  
+  Replace default Filament login view with your own.
 
-- 🧑‍💼 **Customize User Display in Panel**  
-  Change how the user's name is shown in Filament (e.g. from email to a custom name field).
+- 🧑‍💼 **Customize Filament User Display**  
+  Show full name or custom attribute in Filament panel.
 
-> This is just the beginning. More snippets will be added soon — from custom form components to model macros and artisan tricks!
+- ⏰ **Middleware: Time Restricted Access**  
+  Restrict route access to a specific time range.
+
+- ✅ **Middleware: Check Active User**  
+  Block deactivated users from accessing the system.
+
+- ☎️ **Custom Validation Rule: PhoneNumberByCountry**  
+  Validate phone numbers based on selected country (e.g., Iran, USA, Iraq, Saudi Arabia, Russia).
 
 ---
 
-### 📁 Example Snippet: Custom Filament Login
+### 📁 Example Structure
 
 ```bash
 .
 ├── app/
-│   └── Filament/
-│       └── Auth/
-│           └── CustomLogin.php
+│   ├── Filament/
+│   │   └── Auth/
+│   │       └── CustomLogin.php
+│   ├── Http/
+│   │   └── Middleware/
+│   │       ├── CheckActiveUser.php
+│   │       └── AccessTimeMiddleware.php
+│   └── Rules/
+│       └── PhoneNumberByCountry.php
 ├── resources/
 │   └── views/
 │       └── filament/
 │           └── auth/
 │               └── custom-login.blade.php
-|
+├── routes/
+│   └── web.php
 ```
-
----
-
-### 🧩 Contributions
-
-Got a cool Laravel trick or uncommon snippet? Feel free to contribute! Just fork, add your snippet in a new folder, and open a pull request.
-
----
-
-### 📄 License
-
-This repository is open-sourced under the [MIT license](https://opensource.org/licenses/MIT).
-
----
-
-### 🙌 Author
-
-Developed by [Taha Zare](https://github.com/TahaaZare)  
-Want to connect? Say hi on GitHub or follow for future Laravel content.
 
 ---
 
@@ -77,49 +71,47 @@ Want to connect? Say hi on GitHub or follow for future Laravel content.
 
 ### ✨ چه چیزهایی داخل مخزن هست؟
 
-- 🔐 **ورود سفارشی در فیلامنت**  
-  جایگزینی صفحه ورود پیش‌فرض فیلامنت با طراحی و منطق اختصاصی خودتان.
-
-- 🧑‍💼 **نمایش نام دلخواه کاربر در پنل**  
-  به‌جای ایمیل، نام کاربر یا فیلدی که مد نظر دارید را در پنل فیلامنت نمایش دهید.
-
-> این فقط شروع کاره! قراره کلی اسنیپت کاربردی دیگه هم قراره اضافه بشه !
+- 🔐 **ورود سفارشی در فیلامنت**
+- 🧑‍💼 **نمایش نام دلخواه کاربر در پنل**
+- ⏰ **میدلور محدودیت زمانی برای دسترسی**
+- ✅ **میدلور بررسی فعال بودن کاربر**
+- ☎️ **قانون اعتبارسنجی شماره موبایل براساس کشور انتخابی**
 
 ---
 
-### 📁 نمونه ساختار فایل: ورود سفارشی در فیلامنت
+### 📁 ساختار پروژه
 
 ```bash
 .
 ├── app/
-│   └── Filament/
-│       └── Auth/
-│           └── CustomLogin.php
+│   ├── Filament/
+│   │   └── Auth/
+│   │       └── CustomLogin.php
+│   ├── Http/
+│   │   └── Middleware/
+│   │       ├── CheckActiveUser.php
+│   │       └── AccessTimeMiddleware.php
+│   └── Rules/
+│       └── PhoneNumberByCountry.php
 ├── resources/
 │   └── views/
 │       └── filament/
 │           └── auth/
 │               └── custom-login.blade.php
-|
+├── routes/
+│   └── web.php
 ```
-
----
-
-### 🧩 مشارکت
-
-اگر ترفند خاص یا کد کاربردی برای لاراول دارید، خوشحال می‌شم اضافه‌اش کنید. فورک کنید، پوشه جدید بسازید و Pull Request بزنید.
 
 ---
 
 ### 📄 لایسنس
 
-این مخزن تحت لایسنس [MIT](https://opensource.org/licenses/MIT) منتشر شده است.
+این پروژه تحت لایسنس [MIT](https://opensource.org/licenses/MIT) منتشر شده است.
 
 ---
 
 ### 🙌 سازنده
 
-توسعه داده شده توسط [طاها زارع](https://github.com/TahaaZare)  
-اگه پروژه برات مفید بود، ستاره یادت نره ⭐
+توسعه داده شده توسط [طاها زارع](https://github.com/TahaaZare) — اگه مفید بود ستاره یادت نره ⭐
 
 </div>
