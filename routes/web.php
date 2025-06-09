@@ -15,3 +15,10 @@ Route::middleware(['auth', 'active.user'])->group(function () {
         });
 });
 
+
+Route::middleware(['time.access'])->group(function () {
+    Route::get('restricted-area', function () {
+        return 'این بخش فقط در ساعات مشخص قابل دسترسی است';
+    });
+});
+
