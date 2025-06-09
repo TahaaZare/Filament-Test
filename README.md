@@ -7,7 +7,7 @@
 <h2 align="center">🚀 Filament Custom Auth & UI Enhancements</h2>
 
 <p align="center">
-  A simple package or guide to customize authentication and user display in the <strong>Laravel Filament</strong> admin panel.
+  A simple project or guide to customize authentication and user display in the <strong>Laravel Filament</strong> admin panel.
 </p>
 
 <hr>
