@@ -14,7 +14,7 @@ class User extends Authenticatable  implements HasName
 
     public function getFilamentName(): string
     {
-        return $this->username;
+        return "$this->username - $this->mobile";
     }
     protected $fillable = [
         'username',

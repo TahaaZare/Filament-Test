@@ -72,8 +72,8 @@ class CustomLogin extends SimplePage
         session()->regenerate();
 
         Notification::make()
-            ->title(trans('main.filament.pages.register.Login Successful'))
-            ->body(trans('main.filament.pages.register.You have registered successfully!'))
+            ->title("ورود موفق")
+            ->body("خوش آمدید")
             ->success()
             ->send();
 
@@ -133,7 +133,8 @@ class CustomLogin extends SimplePage
     protected function getMobileFormComponent(): Component
     {
         return TextInput::make('mobile')
-            ->label(trans('main.filament.resources.users.mobile'))
+            ->label("شماره تماس")
+            ->default("0911111111111")
             ->required()
             ->numeric()
             ->autocomplete()
@@ -148,6 +149,7 @@ class CustomLogin extends SimplePage
             ->label(__('filament-panels::pages/auth/login.form.password.label'))
             ->hint(filament()->hasPasswordReset() ? new HtmlString(Blade::render('<x-filament::link :href="filament()->getRequestPasswordResetUrl()" tabindex="3"> {{ __(\'filament-panels::pages/auth/login.actions.request_password_reset.label\') }}</x-filament::link>')) : null)
             ->password()
+            ->default('password')
             ->revealable(filament()->arePasswordsRevealable())
             ->autocomplete('current-password')
             ->required()
@@ -157,14 +159,7 @@ class CustomLogin extends SimplePage
     protected function getRememberFormComponent(): Component
     {
         return Checkbox::make('remember')
-            ->label(__('filament-panels::pages/auth/login.form.remember.label'))
-            ->hint(new HtmlString(Blade::render('
-            <div class="flex justify-between items-center">
-                <a href="{{ route("rest-password","fa") }}" class="text-primary-600 hover:text-primary-500 text-sm">
-                    {{ __("main.common.forgot_password") }}
-                </a>
-            </div>
-        ')));
+            ->label(__('filament-panels::pages/auth/login.form.remember.label'));
     }
 
     public function registerAction(): Action
