@@ -3,9 +3,30 @@
 namespace App\Core\Api;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class API
 {
+
+    /**
+     *
+     * @param Request $request
+     * @return string|JsonResponse
+     */
+    public static function getBearerToken(Request $request)
+    {
+        $authHeader = $request->header('Authorization');
+
+        if (!$authHeader || !str_starts_with($authHeader, 'Bearer ')) {
+            return self::error('توکن معتبر نیست یا ارسال نشده است.',null,false,401);
+        }
+
+        $token = str_replace('Bearer ', '', $authHeader);
+
+        return $token;
+    }
+
+
     /**
      * Return a successful JSON response.
      *
